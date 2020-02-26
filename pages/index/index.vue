@@ -284,6 +284,23 @@
 						long:"2:12"
 					};
 					this.newslist[index].list.push(obj);
+					this.newslist[index].list.push(obj);
+					this.newslist[index].list.push(obj);
+					this.newslist[index].list.push(obj);
+					this.newslist[index].list.push(obj);
+					this.newslist[index].list.push(obj);
+					this.newslist[index].list.push(obj);
+					this.newslist[index].list.push(obj);
+					this.newslist[index].list.push(obj);
+					this.newslist[index].list.push(obj);
+					this.newslist[index].list.push(obj);
+					this.newslist[index].list.push(obj);
+					this.newslist[index].list.push(obj);
+					this.newslist[index].list.push(obj);
+					this.newslist[index].list.push(obj);
+					this.newslist[index].list.push(obj);
+					this.newslist[index].list.push(obj);
+					this.newslist[index].list.push(obj);
 					this.newslist[index].loadtext = '上拉加载更多';
 				}, 1000);
 				

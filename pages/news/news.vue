@@ -15,11 +15,11 @@
 				</block>
 			</view>
 			<!-- 右边 -->
-			<!-- <block slot="right">
-				<view class="nav-right u-f-ajc">
-					<view class="icon iconfont icon-bianji"></view>
+			<block slot="right">
+				<view class="nav-right u-f-ajc" @tap="addNews">
+					<view class="icon iconfont icon-bianji1"></view>
 				</view>
-			</block> -->
+			</block>
 		</uni-nav-bar>
 		<!-- 列表 -->
 		<view class="common-list u-f">
@@ -70,12 +70,29 @@
 			//切换tab
 			changeTab(index){
 				this.tabIndex = index;
+			},
+			addNews(){
+				uni.navigateTo({
+					url: '../add-news/add-news',
+				});
 			}
 		}
 	}
 </script>
 
 <style>
+	/* 左侧图标 */
+	.icon-qiandao{
+		/* border: 1px solid red; */
+		color: rgb(244, 234, 42); 
+		font-size: 72upx; 
+		margin-top: -6upx;
+		margin-left: -3upx;
+	}
+	/* 右侧图标 */
+	.icon-bianji1{
+		font-size: 52upx; 
+	}
 	/* 顶部导航 */
 	.nav-tab-bar>view{
 		/* border: 1px solid #007AFF; */

@@ -119,6 +119,15 @@
 				}
 			}
         }
+        ,{
+            "path" : "pages/add-news/add-news",
+            "style" : {
+				"app-plus":{
+					//禁止原生导航
+					"titleNView":false
+				}
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
