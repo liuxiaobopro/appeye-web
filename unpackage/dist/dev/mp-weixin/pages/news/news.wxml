@@ -1,0 +1,1 @@
+<view><uni-nav-bar vue-id="1" statusBar="{{true}}" data-event-opts="{{[['^clickRight',[['submit']]]]}}" bind:clickRight="__e" bind:__l="__l" vue-slots="{{['default']}}"><view data-event-opts="{{[['tap',[['changelook',['$event']]]]]}}" class="u-f-ajc" bindtap="__e"><view class="icon iconfont icon-tubiao-"></view></view></uni-nav-bar></view>
