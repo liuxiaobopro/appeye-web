@@ -178,7 +178,7 @@
 	}
 	.index-list-playinfo{
 		position: absolute;
-		background-color: #333333b8;
+		background-color: #33333373;
 		bottom: 8upx;
 		right: 8upx;
 		color: #FFFFFF;

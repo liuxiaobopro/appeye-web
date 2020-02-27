@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<!-- 自定义导航 -->
-		<uni-nav-bar :statusBar="true" @clickRight="openAdd">
+		<uni-nav-bar :fixed="true" :statusBar="true" @clickRight="openAdd">
 			<!-- 左边 -->
 			<!-- <block slot="left">
 				<view class="nav-left">
@@ -22,38 +22,20 @@
 			</block>
 		</uni-nav-bar>
 		<!-- 列表 -->
-		<view class="common-list u-f">
-			<view class="common-list-l">
-				<image src="../../static/logo.png" mode="widthFix" lazy-load></image>
-			</view>
-			<view class="common-list-r">
-				<view class="u-f-ac u-f-jsb">
-					<view class="u-f-ac">昵称<view class="icon iconfont icon-nanxing">25</view></view>
-					<view class="icon iconfont icon-jiahao">关注</view>
-				</view>
-				<view>我是标题</view>
-				<view>
-					<image src="../../static/images/ad-004.png" mode="widthFix" lazy-load></image>
-				</view>
-				<view class="u-f-ac u-f-jsb">
-					<view style="margin-right: 115px;">深圳 龙岗</view>
-					<view class="u-f-ac">
-						<view class="icon iconfont icon-zhuanfa">11</view>
-						<view class="icon iconfont icon-tubiaozhizuo-">22</view>
-						<view class="icon iconfont icon-dianzan">33</view>
-					</view>
-				</view>
-			</view>
-		</view>
+		<block v-for="( item, index ) in list" :key="index">
+			<common-list :item="item" :index="index"></common-list>
+		</block>
 	</view>
 </template>
 
 <script>
 	import uniNavBar from '../../components/uni-nav-bar/uni-nav-bar.vue';
+	import commonList from '../../components/common/common-list.vue';
 	
 	export default {
-		comments:{
-			uniNavBar
+		components:{
+			uniNavBar,
+			commonList
 		},
 		data() {
 			return {
@@ -63,6 +45,80 @@
 					{name:"关注",id:"guanzhu"},
 					{name:"话题",id:"huati"},
 					{name:"推荐",id:"tuijian"},
+				],
+				list:[
+					{
+						// 文字
+						userpic:"../../static/logo.png",
+						username:"小酒窝",
+						sex:0,    // 0   1
+						age:23,
+						isguanzhu:false,
+						title:"我是标题",
+						path:"深圳",
+						sharenum:11,
+						commentnum:22,
+						goodnum:33,
+						video:false,
+						share:false,
+					},
+					{
+						// 图片
+						userpic:"../../static/logo.png",
+						username:"小酒窝",
+						sex:0,    // 0   1
+						age:23,
+						isguanzhu:false,
+						title:"我是图片标题",
+						video:false,
+						share:false,
+						titlepic:"../../static/images/ad-005.png",
+						path:"深圳",
+						sharenum:11,
+						commentnum:22,
+						goodnum:33,
+						
+					},
+					{
+						// 视频
+						userpic:"../../static/logo.png",
+						username:"小酒窝",
+						sex:1,    // 0   1
+						age:23,
+						isguanzhu:false,
+						title:"我是标题",
+						video:{
+							looknum:"20w",
+							long:"2:13"
+						},
+						share:false,
+						titlepic:"../../static/images/ad-001.png",
+						path:"深圳",
+						sharenum:11,
+						commentnum:22,
+						goodnum:33,
+						
+					},
+					{
+						// 分享
+						userpic:"../../static/logo.png",
+						username:"小酒窝",
+						sex:0,    // 0   1
+						age:23,
+						isguanzhu:false,
+						title:"我是标题",
+						video:false,
+						share:{
+							title:"标题标题标题标题标",
+							titlepic:"../../static/images/ad-005.png"
+						},
+						path:"深圳",
+						sharenum:11,
+						commentnum:22,
+						goodnum:33,
+						
+					},
+					
 				]
 			}
 		},
@@ -91,7 +147,8 @@
 	}
 	/* 右侧图标 */
 	.icon-bianji1{
-		font-size: 52upx; 
+		font-size: 42upx; 
+		margin-right: -40upx;
 	}
 	/* 顶部导航 */
 	.nav-tab-bar>view{
@@ -106,20 +163,5 @@
 		color: #333333!important;
 		font-size: 45upx!important;
 	}
-	/* 列表 */
-	.common-list{
-		padding: 20upx;
-	}
-	.common-list-l{
-		flex-shrink: 0;
-	}
-	.common-list-l image{
-		width: 90upx;
-		height: 90upx;
-		border-radius: 100%;
-	}
-	.common-list-r>view:nth-child(3)>image{
-		width: 100%;
-		border-radius: 10upx;
-	}
+	
 </style>
