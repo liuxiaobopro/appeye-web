@@ -35,16 +35,17 @@
 							<view class="topic-heat-more u-f-ac u-f-jsb">
 								<view>热门分类</view>
 								<view class="u-f-ac">
-									<view class="more">更多</view>
+									<view class="more" @tap="more">更多</view>
 									<view class="icon iconfont icon-ziyuanldpi"></view>
 								</view>
 							</view>
 							<view class="topic-heat-six u-f-ajc">
 								<block v-for="(item,index) in heatsix" :key="index">
-									<view>{{item.heat}}</view>
+									<topic-nav :item="item"></topic-nav>
 								</block>
 							</view>
 						</view>
+						
 						<!-- 最近更新 -->
 						<view class="topic-update">
 							<view>
@@ -52,19 +53,9 @@
 							</view>
 							<view>
 								<block v-for="(item, index) in update.list" :key="index">
-									<view class="topic-update-list u-f-ac" @tap="opendetail(index)">
-										<view>
-											<image :src="item.pic" mode="widthFix" lazy-load=""></image>
-										</view>
-										<view>
-											<view>#{{item.title}}#</view>
-											<view>{{item.comment}}</view>
-											<view>动态{{item.commentnum}} 今日{{item.today}}</view>
-										</view>
-									</view>
+									<topic-update :item="item" :index="index" @opendetail="opendetail(index)"></topic-update>
 								</block>
-								<!-- 上拉加载 -->
-								<load-more :loadtext="update.loadtext"></load-more>
+								
 							</view>
 						</view>
 					</scroll-view>
@@ -80,16 +71,19 @@
 	import newsNavBar from '../../components/news/news-nav-bar.vue';
 	import commonList from '../../components/common/common-list.vue';
 	import loadMore from "../../components/common/load-more.vue"
-	
+	import topicNav from '../../components/news/topic-nav.vue';
+	import topicUpdate from '../../components/news/topic-update.vue';
 	export default {
 		components:{
 			newsNavBar,
 			commonList,
-			loadMore
+			loadMore,
+			topicNav,
+			topicUpdate
 		},
 		data() {
 			return {
-				tabIndex:1,
+				tabIndex:0,
 				swiperheight:800,
 				tabBars:[
 					// {name:"附近",id:"fujin"},
@@ -315,6 +309,14 @@
 				uni.showToast({
 					title: '第'+index+'个'
 				});
+				uni.navigateTo({
+					url: '../topic-detail/topic-detail',
+				});
+			},
+			more(){
+				uni.navigateTo({
+					url: '../topic-nav/topic-nav',
+				});
 			}
 		},
 		onLoad() {
@@ -364,44 +366,13 @@
 	.topic-heat-more>view:nth-child(2)>view{
 		font-size: 25upx;
 	}
-	.topic-heat .topic-heat-six{
-		margin-bottom: 20upx;
-	}
-	.topic-heat .topic-heat-six>view{
-		background-color: #F9F9F9;
-		margin: 40upx 10upx 0 10upx;
-		padding: 10upx 20upx;
-		font-size: 25upx;
-		border-radius: 10upx;
-		color: #B7B7B7;
-	}
 	/* 最近更新 */
 	.topic-update{
 		padding: 20upx;
 	}
-	.topic-update .topic-update-list{
-		margin-top: 20upx;
-		padding-bottom: 10upx;
-		border-bottom: 1upx solid #F2F2F2;
-	}
+	
 	.topic-update>view:first-child{
 		font-size: 30upx;
 	}
-	.topic-update .topic-update-list>view:nth-child(1){
-		margin-right: 20upx;
-	}
-	.topic-update .topic-update-list>view:nth-child(1)>image{
-		width: 120upx;
-		height: 120upx;
-	}
-	.topic-update-list>view:nth-child(2)>view:nth-child(1){
-		font-size: 35upx;
-	}
-	.topic-update-list>view:nth-child(2)>view:nth-child(3){
-		padding-bottom: 10upx;
-	}
-	.topic-update-list>view:nth-child(2)>view:nth-child(n+2){
-		color: #B3B3B3;
-		font-size: 24upx;
-	}
+	
 </style>

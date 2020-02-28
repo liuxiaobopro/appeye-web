@@ -3,7 +3,7 @@
 		<view class="uni-tab-bar" style="position: relative;">
 			<scroll-view scroll-x class="uni-swiper-tab">
 				<block v-for="(tab, index) in tabBars" :key='tab.id'>
-					<view class="swiper-tab-list" :class="{'active':tabIndex == index}" @tap='tabtap(index)' >
+					<view class="swiper-tab-list" :class="{'active':tabIndex == index}" @tap='tabtap(index)' :style="scrollItemStyle">
 						{{tab.name}} <view class="swiper-tab-line"></view>
 					</view>
 				</block>
@@ -16,7 +16,11 @@
 	export default {
 		props:{
 			tabBars:Array,
-			tabIndex:Number
+			tabIndex:Number,
+			scrollItemStyle:{
+				type:String,
+				default:""
+			}
 		},
 		methods:{
 			//tabbao点击事件

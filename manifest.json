@@ -71,5 +71,9 @@
     },
     "mp-toutiao" : {
         "usingComponents" : true
+    },
+    "h5" : {
+        "title" : "糗事百科",
+        "domain" : "zt1.hezhu.pw"
     }
 }

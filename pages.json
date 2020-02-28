@@ -132,6 +132,34 @@
 				}
 			}
         }
+        ,{
+            "path" : "pages/topic-nav/topic-nav",
+            "style" : {
+				"navigationBarTitleText":"热门分类",
+				"app-plus":{
+					"bounce":"none",
+					//隐藏滚动条
+					"scrollIndicator":"none"
+				}
+			}
+        }
+        ,{
+            "path" : "pages/topic-detail/topic-detail",
+            "style" : {
+				"app-plus":{
+					"titleNView":{
+						// 导航栏渐变
+						"type":"transparent",
+						"buttons":[
+							{
+								"type":"menu"
+							}
+						]
+					},
+					"scrollIndicator":"none"
+				}
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
