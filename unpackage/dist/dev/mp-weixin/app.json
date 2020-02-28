@@ -5,7 +5,10 @@
     "pages/paper/paper",
     "pages/home/home",
     "pages/search/search",
-    "pages/add-input/add-input"
+    "pages/add-input/add-input",
+    "pages/add-news/add-news",
+    "pages/topic-nav/topic-nav",
+    "pages/topic-detail/topic-detail"
   ],
   "subPackages": [],
   "window": {
@@ -47,5 +50,5 @@
     ]
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap99.json"
+  "sitemapLocation": "sitemap10.json"
 }

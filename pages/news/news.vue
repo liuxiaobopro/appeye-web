@@ -306,9 +306,9 @@
 				// this.guanzhu.loadtext = '没有数据了';
 			},
 			opendetail(index){
-				uni.showToast({
-					title: '第'+index+'个'
-				});
+				// uni.showToast({
+				// 	title: '第'+index+'个'
+				// });
 				uni.navigateTo({
 					url: '../topic-detail/topic-detail',
 				});

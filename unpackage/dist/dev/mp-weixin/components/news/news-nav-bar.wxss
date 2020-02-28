@@ -1,0 +1,41 @@
+
+.u-f-ajc.data-v-dcbab03a{
+	margin: 0 auto;
+}
+/* 左侧图标 */
+.icon-qiandao.data-v-dcbab03a{
+	/* border: 1px solid red; */
+	color: rgb(244, 234, 42); 
+	font-size: 72rpx; 
+	margin-top: -6rpx;
+	margin-left: -3rpx;
+}
+/* 右侧图标 */
+.icon-bianji1.data-v-dcbab03a{
+	font-size: 42rpx; 
+	margin-right: -40rpx;
+}
+/* 顶部导航 */
+.nav-tab-bar>view.data-v-dcbab03a{
+	/* border: 1px solid #007AFF; */
+	font-size: 40rpx;
+	font-weight: bold;
+	color: #969696;
+	padding: 0 10rpx;
+}
+.active.data-v-dcbab03a{
+	color: #333333!important;
+	font-size: 45rpx!important;
+}
+.nav-tab-bar.data-v-dcbab03a{
+	position: relative;
+}
+.navtabbarline.data-v-dcbab03a{
+	border-top: 6rpx solid #FEDE33;
+	border-bottom: 6rpx solid #FEDE33;
+	width: 90rpx;
+	position: absolute;
+	bottom: 0;
+}
+
+

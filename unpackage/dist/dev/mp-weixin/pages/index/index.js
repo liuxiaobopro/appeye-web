@@ -140,7 +140,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var indexList = function indexList() {return __webpack_require__.e(/*! import() | components/index/list-index */ "components/index/list-index").then(__webpack_require__.bind(null, /*! ../../components/index/list-index.vue */ 70));};var swiperTabHead = function swiperTabHead() {return __webpack_require__.e(/*! import() | components/index/swiper-tab-head */ "components/index/swiper-tab-head").then(__webpack_require__.bind(null, /*! ../../components/index/swiper-tab-head.vue */ 77));};var loadMore = function loadMore() {return __webpack_require__.e(/*! import() | components/common/load-more */ "components/common/load-more").then(__webpack_require__.bind(null, /*! ../../components/common/load-more.vue */ 84));};var noThing = function noThing() {return __webpack_require__.e(/*! import() | components/common/no-thing */ "components/common/no-thing").then(__webpack_require__.bind(null, /*! ../../components/common/no-thing.vue */ 91));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var indexList = function indexList() {return __webpack_require__.e(/*! import() | components/index/list-index */ "components/index/list-index").then(__webpack_require__.bind(null, /*! ../../components/index/list-index.vue */ 94));};var swiperTabHead = function swiperTabHead() {return __webpack_require__.e(/*! import() | components/index/swiper-tab-head */ "components/index/swiper-tab-head").then(__webpack_require__.bind(null, /*! ../../components/index/swiper-tab-head.vue */ 101));};var loadMore = function loadMore() {return __webpack_require__.e(/*! import() | components/common/load-more */ "components/common/load-more").then(__webpack_require__.bind(null, /*! ../../components/common/load-more.vue */ 108));};var noThing = function noThing() {return __webpack_require__.e(/*! import() | components/common/no-thing */ "components/common/no-thing").then(__webpack_require__.bind(null, /*! ../../components/common/no-thing.vue */ 115));};var _default =
+
+
 
 
 
@@ -425,6 +427,23 @@ __webpack_require__.r(__webpack_exports__);
           playnum: "20w",
           long: "2:12" };
 
+        _this.newslist[index].list.push(obj);
+        _this.newslist[index].list.push(obj);
+        _this.newslist[index].list.push(obj);
+        _this.newslist[index].list.push(obj);
+        _this.newslist[index].list.push(obj);
+        _this.newslist[index].list.push(obj);
+        _this.newslist[index].list.push(obj);
+        _this.newslist[index].list.push(obj);
+        _this.newslist[index].list.push(obj);
+        _this.newslist[index].list.push(obj);
+        _this.newslist[index].list.push(obj);
+        _this.newslist[index].list.push(obj);
+        _this.newslist[index].list.push(obj);
+        _this.newslist[index].list.push(obj);
+        _this.newslist[index].list.push(obj);
+        _this.newslist[index].list.push(obj);
+        _this.newslist[index].list.push(obj);
         _this.newslist[index].list.push(obj);
         _this.newslist[index].loadtext = '上拉加载更多';
       }, 1000);

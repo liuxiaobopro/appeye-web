@@ -1,0 +1,13 @@
+
+.topic-heat .topic-heat-six.data-v-6920f7c1{
+	margin-bottom: 20rpx;
+}
+.topic-heat .topic-heat-six>view.data-v-6920f7c1{
+	background-color: #F9F9F9;
+	margin: 40rpx 10rpx 0 10rpx;
+	padding: 10rpx 20rpx;
+	font-size: 25rpx;
+	border-radius: 10rpx;
+	color: #B7B7B7;
+}
+
