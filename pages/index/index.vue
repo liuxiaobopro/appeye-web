@@ -1,6 +1,8 @@
 <template>
 	<view>
+		<!-- 导航栏 -->
 		<swiper-tab-head :tabBars="tabBars" :tabIndex="tabIndex" @tabtap='tabtap'></swiper-tab-head>
+		<!-- 内容 -->
 		<view class="uni-tab-bar">
 			<swiper class="swiper-box" :style="{height: swiperheight + 'px'}" :current="tabIndex" @change="tabChange">
 				<block v-for="(newitem, newindex) in newslist" :key='newindex'>

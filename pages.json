@@ -59,7 +59,11 @@
             "path" : "pages/news/news",
             "style" : {
 				"app-plus":{
-					"titleNView":false
+					"titleNView":false,
+					//隐藏反弹
+					"bounce":"none",
+					//隐藏滚动条
+					"scrollIndicator":"none"
 				}
 			}
         }

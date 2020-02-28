@@ -7,7 +7,7 @@
 			<view class="u-f-ac u-f-jsb">
 				<view class="u-f-ac">
 					{{item.username}}
-					<view class="tag-sex icon iconfont" :class="item.sex == 1?'icon-nanxing nan':'icon-nvxing nv'">
+					<view class="tag-sex icon iconfont"  :class="item.sex == 1?'icon-nanxing nan':'icon-nvxing nv'">
 					{{item.age}}
 					</view>
 				</view>
@@ -66,6 +66,9 @@
 </script>
 
 <style scoped>
+	.common-list-r .icon-nvxing{
+		background-color: #ff007f;
+	}
 	/* 列表 */
 	.common-list{
 		padding: 20upx;
@@ -113,6 +116,7 @@
 	}
 	.common-list-r>view:nth-child(3){
 		position: relative;
+		margin-bottom: 10upx;
 	}
 	.common-list-play,.common-list-playinfo{
 		position: absolute;
