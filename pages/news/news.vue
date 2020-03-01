@@ -70,7 +70,7 @@
 <script>
 	import newsNavBar from '../../components/news/news-nav-bar.vue';
 	import commonList from '../../components/common/common-list.vue';
-	import loadMore from "../../components/common/load-more.vue"
+	import loadMore from "../../components/common/load-more.vue";
 	import topicNav from '../../components/news/topic-nav.vue';
 	import topicUpdate from '../../components/news/topic-update.vue';
 	export default {

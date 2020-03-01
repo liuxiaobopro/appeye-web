@@ -1,6 +1,25 @@
 <template>
-	<view>
-		我的
+	<view class="full">
+		<view class="full">
+			<image src="/static/logo.png" style="width: 750upx;height: 200px;"></image><!-- 注意这里图片的高度，必须是偶数。否则在H5端的部分chrome版本上会触发chrome的bug，在标题栏下方会留下一条线的空隙 -->
+		</view>
+		<view class="sticky-box">
+			22222
+		</view>
+		<view>
+			<text style="line-height: 90px;" class="textcenter">
+				1
+				2
+				3
+				4
+				5
+				6
+				7
+				8
+				9
+				10
+			</text>
+		</view>
 	</view>
 </template>
 
@@ -8,7 +27,7 @@
 	export default {
 		data() {
 			return {
-				
+
 			}
 		},
 		methods: {
@@ -18,11 +37,30 @@
 </script>
 
 <style>
+.full{
+	width: 750upx;
+	margin: 0;
+	padding: 0;
+}
 
+.sticky-box {
+	/* #ifndef APP-PLUS-NVUE */
+	display: flex;
+	position: -webkit-sticky;
+	/* #endif */
+	position: sticky;
+	top: var(--window-top);
+	z-index: 99;
+	flex-direction: row;
+	margin: 0px;
+	padding: 15px 0 15px 0;
+	background-color: #F4F5F6;
+	border-bottom-style: solid;
+	border-bottom-color: #E2E2E2;
+}
+
+.textcenter{
+	text-align: center;
+	font-size: 18px;
+}
 </style>
-
- 
- 
- 
- 
- 

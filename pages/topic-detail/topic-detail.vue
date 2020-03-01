@@ -212,7 +212,7 @@
 					this.tablist[this.tabIndex].list = arr;
 					// 手动停止下拉刷新
 					uni.stopPullDownRefresh();
-				}, 2000);
+				}, 1000);
 			},
 			//上拉加载
 			loadmore(){

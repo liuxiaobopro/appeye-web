@@ -1,13 +1,21 @@
 <template>
 	<view>
 		<!-- 导航栏 -->
-		<swiper-tab-head :tabBars="tabBars" :tabIndex="tabIndex" @tabtap='tabtap'></swiper-tab-head>
+		<view class="sticky-box">
+			<swiper-tab-head :tabBars="tabBars" :tabIndex="tabIndex" @tabtap='tabtap'></swiper-tab-head>
+		</view>
 		<!-- 内容 -->
 		<view class="uni-tab-bar">
 			<swiper class="swiper-box" :style="{height: swiperheight + 'px'}" :current="tabIndex" @change="tabChange">
 				<block v-for="(newitem, newindex) in newslist" :key='newindex'>
 					<swiper-item>
-						<scroll-view scroll-y="true" class="list" @scrolltolower="loadmore(newindex)">
+						<scroll-view scroll-y="true" class="list" @scrolltolower="loadmore(newindex)" 
+						:scroll-top="scrollTop" @scroll="scroll" scroll-with-animation='true'
+						>
+							<view class="getinfo" v-show="show">
+								<view>加载中...</view>
+								<view>{{time}}</view>
+							</view>
 							<template v-if="newitem.list.length > 0">
 								<!-- 列表 -->
 								<block v-for="(item, index) in newitem.list" :key="index">
@@ -61,10 +69,30 @@
 					break;
 			}
 		},
+		
+		onTabItemTap(e){
+			if(e.index == 0){
+				this.time = this.getTime()
+				this.getinfo = '加载中...'
+				this.goTop()
+				this.show = !this.show;
+				setTimeout(()=> {
+					//获取数据
+					this.show = !this.show;
+				}, 2000);
+			}
+		},
 		data() {
 			return {
+				scrollTop:0, 
+				old: {  
+					scrollTop: 0 
+				},
 				swiperheight:500,
 				tabIndex:1,
+				show:false,
+				getinfo:"加载中",
+				time:0,
 				tabBars:[
 					{ name:'关注',id:'guanzhu' },
 					{ name:'推荐',id:'tuijian' },
@@ -248,6 +276,34 @@
 			});
 		},
 		methods: {
+			getTime(){
+				var date = new Date(),
+				year = date.getFullYear(),
+				month = date.getMonth() + 1,
+				day = date.getDate(),
+				hour = date.getHours() < 10 ? "0" + date.getHours() : date.getHours(),
+				minute = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes(),
+				second = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+				month >= 1 && month <= 9 ? (month = "0" + month) : "";
+				day >= 0 && day <= 9 ? (day = "0" + day) : "";
+				var timer = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+				return timer;
+			},
+			/**
+			 * 返回顶部
+			 */
+				//记录滚动条位置
+			scroll(e) {
+				this.old.scrollTop = e.detail.scrollTop
+			},
+				//记录滚动条位置
+			goTop(e) {
+				this.scrollTop = this.old.scrollTop
+				//在数据变化后要执行的某个操作，而这个操作需要使用随数据改变而改变的DOM结构的时候，这个操作都应该放进Vue.nextTick()的回调函数中。
+				this.$nextTick(()=>{
+					this.scrollTop = 0
+				});
+			},
 			//tabbao点击事件
 			tabtap(index){
 				// console.log(index);
@@ -313,5 +369,22 @@
 </script>
 
 <style>
-
+.getinfo{
+	height: 100upx;
+	color: #A2A2A2;
+	text-align: center;
+}
+.getinfo>view{
+	
+}
+.sticky-box {
+	/* #ifndef APP-PLUS-NVUE */
+	display: flex;
+	position: -webkit-sticky;
+	/* #endif */
+	position: sticky;
+	top: var(--window-top);
+	z-index: 99;
+	flex-direction: row;
+}
 </style>

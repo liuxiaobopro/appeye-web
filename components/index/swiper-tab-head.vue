@@ -1,10 +1,11 @@
 <template>
 	<view>
-		<view class="uni-tab-bar" style="position: relative;">
-			<scroll-view scroll-x class="uni-swiper-tab">
+		<view class="uni-tab-bar">
+			<scroll-view scroll-x class="uni-swiper-tab" style="background-color: #FFFFFF;">
 				<block v-for="(tab, index) in tabBars" :key='tab.id'>
 					<view class="swiper-tab-list" :class="{'active':tabIndex == index}" @tap='tabtap(index)' :style="scrollItemStyle">
-						{{tab.name}} <view class="swiper-tab-line"></view>
+						{{tab.name}}{{tab.num?tab.num:''}}
+						 <view class="swiper-tab-line"></view>
 					</view>
 				</block>
 			</scroll-view>

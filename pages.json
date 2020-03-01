@@ -10,9 +10,15 @@
 			"path": "pages/index/index",
 			"style": {
 				// "navigationBarTitleText": "uni-app"
+				//是否开启下拉刷新
+				"enablePullDownRefresh":true,
 				"app-plus":{
-					//是否开启下拉刷新
-					// "enablePullDownRefresh":true,
+					
+					"pullToRefresh": {
+					    "support": true,
+					    "color": "#fa436a",
+					    "style": "circle"
+					},
 					//隐藏滚动条
 					"scrollIndicator":"none",
 					//隐藏反弹效果
@@ -72,6 +78,8 @@
             "style" : {
 				"navigationBarTitleText":"小纸条",
 				"app-plus":{
+					//是否开启下拉刷新
+					"enablePullDownRefresh":true,
 					"titleNView":{
 						"buttons":[
 							//左边
@@ -79,9 +87,9 @@
 								"color":"#000000",
 								"colorPressed":"#ccc",
 								"float":"left",
-								"fontSize":"30px",
+								"fontSize":"18px",
 								"fontSrc":"/static/font/icon.ttf",
-								"text":"\ue606"
+								"text":"\ue666"
 								
 							},
 							//右边
@@ -91,10 +99,12 @@
 								"float":"right",
 								"fontSize":"30px",
 								"fontSrc":"/static/font/icon.ttf",
-								"text":"\ue649"
+								"text":"\ue635"
 							}
 						]
-					}
+					},
+					//隐藏滚动条
+					"scrollIndicator":"none"
 				}
 			}
         }
@@ -187,6 +197,106 @@
 					"scrollIndicator":"none"
 				}
 			}
+        }
+        ,{
+            "path" : "pages/user-list/user-list",
+            "style" : {
+				
+					// "navigationBarTitleText": "uni-app"
+					"app-plus":{
+						// 进场动画
+						"animationType":"slide-in-left",
+						//隐藏滚动条
+						"scrollIndicator":"none",
+						//隐藏反弹效果
+						"bounce":"none",
+						//顶部导航栏
+						"titleNView":{
+							//隐藏返回按钮
+							"autoBackButton":false,
+							// 搜索框配置
+							"searchInput":{
+								"align":"left",
+								"backgroundColor":"#f7f7f7",
+								"borderRadius":"4px",
+								"placeholderColor":"#ccc",
+								"titleSize":"3px",
+								"placeholder":"搜索糗友"
+							},
+							//按钮配置
+							"buttons":[
+								//右边
+								{
+									"color":"#000000",
+									"colorPressed":"#ccc",
+									"float":"right",
+									"fontSize":"13px",
+									"text":"取消"
+								}
+							]
+						}
+					}
+				
+			}
+        }
+        ,{
+            "path" : "pages/user-chat/user-chat",
+            "style" : {
+				"app-plus":{
+					//隐藏滚动条
+					"scrollIndicator":"none",
+					"titleNView":{
+						"buttons":[
+							//右边
+							{
+								"color":"#000000",
+								"colorPressed":"#ccc",
+								"float":"right",
+								"fontSize":"20px",
+								"fontSrc":"/static/font/icon.ttf",
+								"text":"\ue616"
+							}
+						]
+					}
+				}
+			}
+        }
+        ,{
+            "path" : "pages/HM-chat/HM-chat",
+            "style" : {
+				"navigationBarTitleText":"聊天室",
+            	"navigationBarBackgroundColor":"#f2f2f2",
+            	"backgroundColorTop":"#e5e5e5",
+            	"backgroundColorBottom":"#e5e5e5",
+            	"app-plus":{
+            		"softinputNavBar":"none",
+            		"bounce":"none"
+            	}
+            }
+        }
+        ,{
+            "path" : "pages/HM-chat/HM-details/HM-details",
+            "style" : {
+				"navigationBarBackgroundColor":"#cf3c35",
+				"navigationBarTextStyle":"white",
+				"navigationBarTitleText":"红包",
+				"backgroundColorTop":"#cf3c35",
+				"backgroundColorBottom":"#fff"
+			}
+        }
+        ,{
+            "path" : "pages/HM-chat/HM-hand/HM-hand",
+            "style" : {
+            	"navigationBarBackgroundColor":"#cf3c35",
+            	"navigationBarTextStyle":"white",
+            	"navigationBarTitleText":"发红包",
+            	"backgroundColorTop":"#cf3c35",
+            	"backgroundColorBottom":"#fff",
+				"app-plus":{
+					"softinputNavBar":"none",
+					"bounce":"none"
+				}
+            }
         }
     ],
 	"globalStyle": {
