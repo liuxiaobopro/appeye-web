@@ -85,8 +85,8 @@
 			},
 			//进入详情页
 			opendetail(){
-				uni.showToast({
-					title: '进入'
+				uni.navigateTo({
+					url: '../../pages/detail/detail?detailDate='+JSON.stringify(this.item),
 				});
 			}
 		}

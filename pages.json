@@ -115,7 +115,7 @@
         ,{
             "path" : "pages/search/search",
             "style" : {
-				// "navigationBarTitleText": "uni-app"
+				"enablePullDownRefresh":"true",
 				"app-plus":{
 					//隐藏滚动条
 					"scrollIndicator":"none",
@@ -297,6 +297,23 @@
 					"bounce":"none"
 				}
             }
+        }
+        ,{
+            "path" : "pages/detail/detail",
+            "style" : {
+				"navigationBarTitleText":"内容页",
+				"app-plus":{
+					"scrollIndicator":"none",
+					"bounce":"none",
+					"titleNView":{
+						"buttons":[
+							{
+								"type":"menu"
+							}
+						]
+					}
+				}
+			}
         }
     ],
 	"globalStyle": {

@@ -41,13 +41,14 @@
 	import swiperTabHead from "../../components/index/swiper-tab-head.vue";
 	import loadMore from "../../components/common/load-more.vue"
 	import noThing from "../../components/common/no-thing.vue";
+	import time from '../../common/time.js';
 	export default {
 		//注册组件
 		components:{
 			indexList,
 			swiperTabHead,
 			loadMore,
-			noThing
+			noThing,
 		},
 		//监听搜索框
 		onNavigationBarSearchInputClicked(){
@@ -72,7 +73,7 @@
 		
 		onTabItemTap(e){
 			if(e.index == 0){
-				this.time = this.getTime()
+				this.time = time.getTime.getTime()
 				this.getinfo = '加载中...'
 				this.goTop()
 				this.show = !this.show;
@@ -276,19 +277,7 @@
 			});
 		},
 		methods: {
-			getTime(){
-				var date = new Date(),
-				year = date.getFullYear(),
-				month = date.getMonth() + 1,
-				day = date.getDate(),
-				hour = date.getHours() < 10 ? "0" + date.getHours() : date.getHours(),
-				minute = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes(),
-				second = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
-				month >= 1 && month <= 9 ? (month = "0" + month) : "";
-				day >= 0 && day <= 9 ? (day = "0" + day) : "";
-				var timer = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
-				return timer;
-			},
+			
 			/**
 			 * 返回顶部
 			 */
