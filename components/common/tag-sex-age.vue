@@ -1,5 +1,5 @@
 <template>
-	<view class="tag-sex icon iconfont"  :class="sex == 1?'icon-nanxing':'icon-nvxing'">
+	<view class="tag-sex icon iconfont"  :class="sex == 1?'icon-nanxing':'icon-nvxing nvxing'">
 	{{age}}
 	</view>
 </template>
@@ -15,6 +15,9 @@
 
 <style scoped>
 	.common-list-r .icon-nvxing{
+		background-color: #ff007f;
+	}
+	.nvxing{
 		background-color: #ff007f;
 	}
 	.tag-sex{

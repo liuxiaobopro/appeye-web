@@ -29,40 +29,16 @@
 				image: '',
 				shareType:1,   //1文字  2图片   3图文   5小程序
 				providerList: [
-					{
-						name: '微信好友',
-						id: 'weixin',
-						sort:0,
-						zicon:"weixinhaoyou1"
-					},
-					{
-						name: '朋友圈',
-						id: 'weixin',
-						type:'WXSenceTimeline',
-						sort:1,
-						zicon:"pengyouquan"
-					},
-					{
-						name: '新浪微博',
-						id: 'sinaweibo',
-						sort:2,
-						zicon:"weibo"
-					},
-					{
-						name: 'QQ',
-						id: 'qq',
-						sort:3,
-						zicon:"qq"
-					}
+					
 				]
 			}
 		},
-		onLoad() {
+		// 等同页面的onload
+		mounted() {
 			// 暂时这里代码运行不起来,待检查
 			uni.getProvider({
 				service: 'share',
 				success: (e) => {
-					console.log(e);
 					let data = []
 					for (let i = 0; i < e.provider.length; i++) {
 						switch (e.provider[i]) {
