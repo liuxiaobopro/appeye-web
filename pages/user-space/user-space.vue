@@ -8,14 +8,14 @@
 		</view>
 		<view style="height: 20upx;background-color: #F4F4F4;"></view>
 		<!-- tab切换 -->
-		<swiper-tab-head :tabBars="tabBars" :tabIndex="tabIndex" @tabtap='tabtap' scrollItemStyle="width:33%;"></swiper-tab-head>
+		<!-- <swiper-tab-head :tabBars="tabBars" :tabIndex="tabIndex" @tabtap='tabtap' scrollItemStyle="width:33%;"></swiper-tab-head> -->
 		<!-- 主体 -->
 		<!-- <block v-for="(item, index) in tablist" :key="index">
 			<template v-if="tabIndex==index">
 				<block v-for="(itemss, indexss) in item.list" :key="indexss">
 					<common-list :item="itemss" :index="indexss"></common-list>
 				</block>
-			</template>
+			</template> 
 		</block> -->
 		<template v-if="tabIndex==0">
 			<user-space-userinfo :userinfo="userinfo"></user-space-userinfo>
@@ -200,7 +200,14 @@
 		computed:{
 			
 		},
-		
+		onNavigationBarButtonTap(e) {
+			switch (e.index){
+				case 0:
+					break;
+				default:
+					break;
+			}
+		},
 		methods: {
 			//tabbao点击事件
 			tabtap(index){

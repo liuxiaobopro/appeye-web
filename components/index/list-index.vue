@@ -1,5 +1,5 @@
 <template>
-	<view class="index-list animated bounceInUp fast">
+	<view class="index-list animated fadeIn fast">
 		<view class="index-list1">
 			<view>
 				<image :src="item.userpic" mode="widthFix" lazy-load></image>{{item.username}}

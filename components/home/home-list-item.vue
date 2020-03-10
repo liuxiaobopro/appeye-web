@@ -1,5 +1,5 @@
 <template>
-	<view class="home-list-item u-f-ac u-f-jsb" hover-class="home-list-hover" @tap="clickeven">
+	<view class="home-list-item u-f-ac u-f-jsb animated fadeIn fast" hover-class="home-list-hover" @tap="clickeven">
 		<view class="u-f-ac">
 			<view v-if="item.listicon" class="icon iconfont" :class="item.listicon"></view>{{item.text}}
 		</view>
@@ -22,12 +22,22 @@
 							url: this.item.url,
 						});
 					}
-						// uni.navigateTo({
-						// 	url: '',
-						// 	success: res => {},
-						// 	fail: () => {},
-						// 	complete: () => {}
-						// });
+						break;
+					case "clear":
+					uni.showModal({
+						title: '提示',
+						content: '是否清除缓存?',
+						cancelText: '不了',
+						confirmText: '立即清除',
+						success: res => {
+							if(res.confirm){
+								uni.clearStorage()
+								uni.showToast({
+									title: '清理缓存成功'
+								});
+							}
+						},
+					});
 						break;
 					default:
 						break;

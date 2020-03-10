@@ -11,7 +11,7 @@
 			"style": {
 				// "navigationBarTitleText": "uni-app"
 				//是否开启下拉刷新
-				"enablePullDownRefresh":true,
+				// "enablePullDownRefresh":true,
 				"app-plus":{
 					
 					"pullToRefresh": {

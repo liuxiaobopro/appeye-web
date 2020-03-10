@@ -94,7 +94,7 @@
 				this.$emit('show')
 			},
 			async share(e) {
-				console.log('分享通道:'+ e.id +'； 分享类型:' + this.shareType);
+				// console.log('分享通道:'+ e.id +'； 分享类型:' + this.shareType);
 				
 				if(!this.shareText && (this.shareType === 1 || this.shareType === 0)){
 					uni.showModal({

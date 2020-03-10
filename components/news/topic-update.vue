@@ -1,5 +1,5 @@
 <template>
-	<view class="topic-update-list u-f-ac animated bounceInUp fast" @tap="opendetail(index)">
+	<view class="topic-update-list u-f-ac animated fadeIn fast" @tap="opendetail(index)">
 		<view>
 			<image :src="item.pic" mode="widthFix" lazy-load=""></image>
 		</view>

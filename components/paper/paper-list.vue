@@ -1,5 +1,5 @@
 <template>
-	<view class="paper u-f-ac animated bounceInUp fast" @tap="opendetail">
+	<view class="paper u-f-ac animated fadeIn fast" @tap="opendetail">
 		<view class="paper-left u-f-ac">
 			<image :src="item.userpic" mode="widthFix" lazy-load></image>
 		</view>

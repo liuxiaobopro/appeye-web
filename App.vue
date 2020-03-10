@@ -1,10 +1,11 @@
 <script>
 	export default {
 		onLaunch: function() {
-			// console.log('App Launch')
+			// 网络监听
+			this.lib.NetWork.On()
 		},
 		onShow: function() {
-			// console.log('App Show')
+			this.lib.NetWork.On()
 		},
 		onHide: function() {
 			// console.log('App Hide')
